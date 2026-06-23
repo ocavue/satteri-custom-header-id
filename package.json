@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "packageManager": "pnpm@11.5.0",
-  "description": "TypeScript starter kit",
+  "description": "A Sätteri plugin for custom heading IDs ({#custom-id})",
   "author": "ocavue <ocavue@gmail.com>",
   "license": "MIT",
   "funding": "https://github.com/sponsors/ocavue",
@@ -13,7 +13,17 @@
     "url": "https://github.com/ocavue/satteri-custom-header-id.git"
   },
   "bugs": "https://github.com/ocavue/satteri-custom-header-id/issues",
-  "keywords": [],
+  "keywords": [
+    "satteri",
+    "markdown",
+    "mdx",
+    "heading",
+    "header",
+    "id",
+    "anchor",
+    "hast",
+    "astro"
+  ],
   "sideEffects": false,
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -49,6 +59,14 @@
     "test": "vitest",
     "typecheck": "tsc -b"
   },
+  "peerDependencies": {
+    "satteri": "^0.9.0"
+  },
+  "peerDependenciesMeta": {
+    "satteri": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@ocavue/eslint-config": "^4.8.1",
     "@ocavue/tsconfig": "^0.7.1",
@@ -56,6 +74,7 @@
     "eslint": "^10.4.0",
     "knip": "^6.14.2",
     "oxfmt": "^0.53.0",
+    "satteri": "^0.9.1",
     "tsdown": "^0.22.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.14",
