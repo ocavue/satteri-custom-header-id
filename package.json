@@ -1,7 +1,7 @@
 {
   "name": "satteri-custom-header-id",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "packageManager": "pnpm@11.5.0",
   "description": "A Sätteri plugin for custom heading IDs ({#custom-id})",
   "author": "ocavue <ocavue@gmail.com>",
