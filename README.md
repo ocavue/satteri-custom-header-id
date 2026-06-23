@@ -2,43 +2,50 @@
 
 [![NPM version](https://img.shields.io/npm/v/satteri-custom-header-id?color=a1b858&label=)](https://www.npmjs.com/package/satteri-custom-header-id)
 
-A minimal [TypeScript](https://www.typescriptlang.org/) library starter with bundling, testing, linting, formatting, and automated npm releases, all preconfigured.
+A [Sätteri](https://github.com/bruits/satteri) plugin that gives a Markdown heading a custom `id` from a trailing `{#custom-id}` (or `||custom-id||`) marker.
 
-> **Using this template?** Click [Use this template](https://github.com/ocavue/starter-ts/generate), rename the package in `package.json`, and write your code in `src/index.ts`.
+The marker is removed from the rendered heading and used as its `id`. Headings without a marker are left untouched. This is the [Sätteri](https://github.com/bruits/satteri) port of [`remark-custom-header-id`](https://github.com/sindresorhus/remark-custom-header-id).
 
-## Project structure
+## Example
 
-- `src/`: source code, with co-located [Vitest](https://vitest.dev/) tests (`*.test.ts`)
-- `dist/`: bundled output (ESM + type declarations), built by [tsdown](https://tsdown.dev/)
+| Markdown                           | HTML output                           |
+| ---------------------------------- | ------------------------------------- |
+| `## Hello world {#custom-id}`      | `<h2 id="custom-id">Hello world</h2>` |
+| `## Hello world \|\|custom-id\|\|` | `<h2 id="custom-id">Hello world</h2>` |
+| `## Hello world`                   | `<h2>Hello world</h2>`                |
 
-## Scripts
+## Install
 
-Local development needs [Node.js](https://nodejs.org/) v22+ and [pnpm](https://pnpm.io/).
+```bash
+npm install satteri-custom-header-id satteri
+```
 
-| Command          | Description                                                                                                                |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm dev`       | Rebuild on change (`tsdown --watch`)                                                                                       |
-| `pnpm build`     | Bundle the library to `dist/`                                                                                              |
-| `pnpm test`      | Run tests with [Vitest](https://vitest.dev/)                                                                               |
-| `pnpm lint`      | Lint with [ESLint](https://eslint.org/), [oxfmt](https://oxc.rs/docs/guide/usage/formatter), and [knip](https://knip.dev/) |
-| `pnpm fix`       | Auto-fix formatting and lint issues                                                                                        |
-| `pnpm typecheck` | Type-check with `tsc`                                                                                                      |
+## Usage
 
-## Publishing
+```js
+import { markdownToHtml } from 'satteri'
+import { satteriCustomHeaderId } from 'satteri-custom-header-id'
 
-Releases are automated with [release-please](https://github.com/googleapis/release-please) and npm [trusted publishing](https://docs.npmjs.com/trusted-publishers/) (OIDC). No tokens to manage.
+const { html } = await markdownToHtml('## Hello world {#custom-id}', {
+  hastPlugins: [satteriCustomHeaderId()],
+})
 
-1. **First release (manual).** OIDC can't create a brand-new package, so publish the first version by hand:
+// html === '<h2 id="custom-id">Hello world</h2>'
+```
 
-   ```bash
-   pnpm login
-   pnpm build
-   pnpm publish
-   ```
+Sätteri's built-in heading-id plugin keeps an `id` that is already set, so this plugin's custom id wins over the auto-generated slug.
 
-2. **Enable OIDC.** On [npmjs.com](https://www.npmjs.com/), open the package → **Settings → Trusted Publisher → GitHub Actions**, and set the workflow filename to `release.yml`.
+### MDX
 
-3. **Future releases (automatic).** Push [Conventional Commits](https://www.conventionalcommits.org/) (`fix:`, `feat:`, …) to your default branch (usually `master` or `main`); [release-please](https://github.com/googleapis/release-please) opens a release PR that bumps the version, updates the changelog, and publishes on merge.
+In MDX, escape the braces (`\{#custom-id\}`) so they are treated as text rather than a JSX expression:
+
+```mdx
+## Hello world \{#custom-id\}
+```
+
+## Credits
+
+- [`remark-custom-header-id`](https://github.com/sindresorhus/remark-custom-header-id) by [Sindre Sorhus](https://github.com/sindresorhus): the original remark plugin this ports, including the `{#id}` and `||id||` syntaxes.
 
 ## Sponsors
 
