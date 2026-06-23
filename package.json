@@ -1,0 +1,64 @@
+{
+  "name": "satteri-custom-header-id",
+  "type": "module",
+  "version": "0.0.1",
+  "packageManager": "pnpm@11.5.0",
+  "description": "TypeScript starter kit",
+  "author": "ocavue <ocavue@gmail.com>",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/ocavue",
+  "homepage": "https://github.com/ocavue/satteri-custom-header-id#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ocavue/satteri-custom-header-id.git"
+  },
+  "bugs": "https://github.com/ocavue/satteri-custom-header-id/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "lint": "pnpm run lint:eslint && pnpm run lint:oxfmt && pnpm run lint:knip",
+    "lint:oxfmt": "oxfmt --check",
+    "lint:eslint": "eslint",
+    "lint:knip": "knip",
+    "fix": "pnpm run fix:oxfmt && pnpm run fix:eslint",
+    "fix:oxfmt": "oxfmt",
+    "fix:eslint": "eslint --fix",
+    "test": "vitest",
+    "typecheck": "tsc -b"
+  },
+  "devDependencies": {
+    "@ocavue/eslint-config": "^4.8.1",
+    "@ocavue/tsconfig": "^0.7.1",
+    "@types/node": "^22.19.19",
+    "eslint": "^10.4.0",
+    "knip": "^6.14.2",
+    "oxfmt": "^0.53.0",
+    "tsdown": "^0.22.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14",
+    "vitest": "^4.1.7"
+  }
+}
