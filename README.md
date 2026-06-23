@@ -46,12 +46,6 @@ In MDX, escape the braces (`\{#custom-id\}`) so they are treated as text rather 
 ## Credits
 
 - [`remark-custom-header-id`](https://github.com/sindresorhus/remark-custom-header-id) by [Sindre Sorhus](https://github.com/sindresorhus): the original remark plugin this ports, including the `{#id}` and `||id||` syntaxes.
-- [Sätteri](https://github.com/bruits/satteri): the Markdown engine this plugin runs on.
-
-## Related
-
-- [`remark-custom-header-id`](https://github.com/sindresorhus/remark-custom-header-id): the same feature for the [unified](https://github.com/unifiedjs/unified) / remark pipeline.
-- [`satteri-resolve-markdown-links`](https://github.com/ocavue/rehype-resolve-markdown-links): another Sätteri plugin, resolving relative Markdown links to absolute URLs.
 
 ## Sponsors
 
