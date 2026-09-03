@@ -2,7 +2,7 @@
   "name": "satteri-custom-header-id",
   "type": "module",
   "version": "0.1.1",
-  "packageManager": "pnpm@11.5.0",
+  "packageManager": "pnpm@11.25.0",
   "description": "A Sätteri plugin for custom heading IDs ({#custom-id})",
   "author": "ocavue <ocavue@gmail.com>",
   "license": "MIT",
@@ -72,12 +72,12 @@
     "@ocavue/tsconfig": "^0.7.1",
     "@types/node": "^24.0.0",
     "eslint": "^10.9.1",
-    "knip": "^6.14.2",
-    "oxfmt": "^0.53.0",
+    "knip": "^6.34.0",
+    "oxfmt": "^0.66.0",
     "satteri": "^0.10.5",
-    "tsdown": "^0.22.0",
+    "tsdown": "^0.22.14",
     "typescript": "^6.0.3",
-    "vite": "^8.0.14",
-    "vitest": "^4.1.7"
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
   }
 }
