@@ -5,7 +5,7 @@ const HEADING_TAGS = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6']
 // A trailing ` {#custom-id}` or ` ||custom-id||` marker on a heading. The
 // pattern (and the two supported syntaxes) come from Sindre Sorhus's
 // remark-custom-header-id (MIT), so behavior matches the remark plugin.
-const MARKER = / {#(?<hash>[^}]+)}$| \|\|(?<pipe>[^|]+)\|\|$/
+const MARKER = / \{#(?<hash>[^}]+)\}$| \|\|(?<pipe>[^|]+)\|\|$/
 
 /**
  * A [Sätteri](https://github.com/bruits/satteri) plugin that reads a trailing
