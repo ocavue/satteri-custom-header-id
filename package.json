@@ -60,7 +60,7 @@
     "typecheck": "tsc -b"
   },
   "peerDependencies": {
-    "satteri": "^0.9.0"
+    "satteri": "^0.9.0 || ^0.10.0"
   },
   "peerDependenciesMeta": {
     "satteri": {
@@ -74,7 +74,7 @@
     "eslint": "^10.4.0",
     "knip": "^6.14.2",
     "oxfmt": "^0.53.0",
-    "satteri": "^0.9.1",
+    "satteri": "^0.10.5",
     "tsdown": "^0.22.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.14",
